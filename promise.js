@@ -9,7 +9,7 @@ const promise = new Promise((resolve, reject) => {
 }).finally(() => {
     console.log('故事的尾声')
 })
-console.log('Hello World');
+console.log('Hello World')
 
 const name = new Promise((function (resolve, reject) {
     reject('Good Bye')
