@@ -11,6 +11,18 @@ const promise = new Promise((resolve, reject) => {
 })
 console.log('Hello World')
 
-const name = new Promise((function (resolve, reject) {
-    reject('Good Bye')
-})).catch((reason) => console.log(reason))
+
+function sum(a, b) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(a + b)
+        }, 1000)
+    })
+}
+sum(100, 100).then(result => {
+    return sum(result, 100)
+}).then(result => {
+    return sum(result, 100)
+}).then(result => {
+    console.log(result)
+})
